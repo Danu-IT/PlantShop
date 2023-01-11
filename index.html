@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,700,700italic" rel="stylesheet" />
+    <title>Plant shop</title>
+</head>
+<body>
+    <div class="modal">
+        <div class="preloader modal">
+            <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="currentColor"
+                d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+              </path>
+            </svg>
+          </div>
+        <img class="close" src="./assets/images/close.svg" alt="">
+        <div class="modal__container">
+            <img class="modal__img" src="./assets/images/map.svg" alt="">
+            <h3 class="modal__title">Форма сайта</h3>
+            <div class="modal__text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</div>
+            <img class="modal__error" src="./assets/images/closeRed.svg" alt="">
+            <input type="name" class="modal__input name" placeholder="Имя" type="text">
+            <input value="+79994562121" type="tel" class="modal__input" placeholder="Номер телефона" type="text">
+        </div>
+        <table  class="modal__table" width="100%" cellspacing="0" cellpadding="5">
+            <tr> 
+                <td >UserID</td><td >id</td><td >title</td><td >completed</td>
+            </tr>
+        </table>
+        <div class="modal__btns">
+            <button name="name" class="modal__btn modal__btn_close">Отменить</button>
+            <button name="tel" class="modal__btn modal__btn_colored">Отправить</button>
+        </div>
+        
+    </div>
+    <div class="overlay" id="overlay-modal"></div>
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-logo">
+                <img class="header-logo__img" src="./assets/images/logo.svg" alt="">
+                <span class="header-logo__text">P</span>
+            </div>
+            <button class="header-btn">Форма</button>
+        </div>
+    </header>
+    <main>
+         <section class="navigation">
+            <img class="navigation-img" src="./assets/images/mainPhoto.png" alt="">
+            <div class="navigation-form ">
+                <h1 class="navigation__title">Kembang <br> Flower Mantap</h1>
+                <div class="navigation__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </div>
+                <div class="navigation__btns">
+                    <div class="navigation__prev">
+                        <div class="navigation__title-btns">
+                            <img src="./assets/images/left.svg" alt="">
+                            Previous
+                        </div>
+                        <div class="navigation__subtitle-btns">
+                            Kaktus Plant
+                        </div>
+                    </div>
+                    <div class="navigation__next">
+                        <div class="navigation__title-btns title-btns_next">
+                            Next
+                            <img src="./assets/images/right.svg" alt="">
+                        </div>
+                        <div class="navigation__subtitle-btns subtitle-btns_next">
+                                Rahasia Plant
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section class="advantages container">
+           <div class="advantages__cards"></div>
+        </section>
+        <section class="featured container">
+            <div class="featured__head">
+                <h2>Featured Plants</h2>
+                <select id="selectID">
+                    <option value=”GR”>Cheaper First</option>
+                </select>
+            </div>
+            <div class="featured__flowers">
+            </div>
+        </section>
+
+        <script type="module" src="src/index.js"></script>
+    </main>
+</body>
+</html>
