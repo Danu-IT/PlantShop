@@ -12,6 +12,26 @@ const name = document.querySelector('[type="name"]');
 const tel = document.querySelector('[type="tel"]');
 const error = document.querySelector(".modal__error");
 
+document.querySelector(".featured__select").addEventListener("change", (e) => {
+  featured.sort((a, b) => {
+    if (e.target.value === "price") {
+      return (
+        a.price.slice(4, a.price.length) - b.price.slice(4, b.price.length)
+      );
+    }
+    if (e.target.value === "name") {
+      return a.title.split(" ")[0].localeCompare(b.title.split(" ")[0]);
+    }
+  });
+  featuredSection(featured);
+  featuredSectionRemove();
+});
+
+const featuredSectionRemove = () => {
+  const container = document.querySelector(".featured__flowers");
+  container.remove();
+};
+
 const advantagesSection = (advantages) => {
   const container = document.querySelector(".advantages__cards");
   advantages.map((advantage) => {
@@ -42,7 +62,9 @@ const advantagesSection = (advantages) => {
 advantagesSection(advantages);
 
 const featuredSection = (featured) => {
-  const container = document.querySelector(".featured__flowers");
+  const featuredContainer = document.querySelector(".featured ");
+  const container = document.createElement("div");
+  container.className = "featured__flowers";
   featured.map((feature) => {
     const div = document.createElement("div");
     div.className = "featured__flower";
@@ -60,23 +82,45 @@ const featuredSection = (featured) => {
     div.append(title);
     div.append(price);
     container.append(div);
+    featuredContainer.append(container);
   });
 };
 featuredSection(featured);
 
+const removeForm = () => {
+  name.value = "";
+  tel.value = "";
+  error.classList.remove("active");
+};
+
+document.addEventListener("click", (event) => {
+  event.stopPropagation();
+  if (
+    !modal.contains(event.target) &&
+    modal.classList.contains("active") &&
+    event.target !== btn
+  ) {
+    modal.classList.toggle("active");
+    overlay.classList.toggle("active");
+    body.classList.toggle("hidden");
+    removeForm();
+  }
+});
+
 btn.addEventListener("click", (event) => {
   event.preventDefault();
-  modal.classList.add("active");
-  overlay.classList.add("active");
-  body.classList.add("hidden");
+  modal.classList.toggle("active");
+  overlay.classList.toggle("active");
+  body.classList.toggle("hidden");
 });
 
 [close, close2].forEach((el) => {
   el.addEventListener("click", (event) => {
     event.preventDefault();
-    modal.classList.remove("active");
-    overlay.classList.remove("active");
-    body.classList.remove("hidden");
+    modal.classList.toggle("active");
+    overlay.classList.toggle("active");
+    body.classList.toggle("hidden");
+    removeForm();
   });
 });
 

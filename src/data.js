@@ -29,26 +29,26 @@ export const featured = [
   {
     img: "../assets/images/featured/first.png",
     title: "Kaktus Plants",
-    price: "IDR 85.000",
+    price: "IDR 35.000",
   },
   {
     img: "../assets/images/featured/second.png",
-    title: "Landak Plants",
+    title: "Aloe Plants",
     price: "IDR 105.000",
   },
   {
     img: "../assets/images/featured/third.png",
-    title: "Kecubung Plants",
+    title: "Melocarduus Plants",
     price: "IDR 85.000",
   },
   {
     img: "../assets/images/featured/fourth.png",
-    title: "Kecubung Plants",
-    price: "IDR 85.000",
+    title: "Succulentus Plants",
+    price: "IDR 45.000",
   },
   {
     img: "../assets/images/featured/fifth.png",
-    title: "Kecubung Plants",
-    price: "IDR 85.000",
+    title: "Haworthia Plants",
+    price: "IDR 75.000",
   },
 ];
